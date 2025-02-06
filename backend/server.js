@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const recipeRoutes = require("./routes/recipeRoutes");
+const aiScannerRoutes = require("./routes/aiScannerRoutes");
+
 
 dotenv.config();
 
@@ -12,9 +14,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/recipes", recipeRoutes);
+
+app.use("/api/ai-scanner", aiScannerRoutes);
 
 const PORT = process.env.PORT || 4000;
 mongoose

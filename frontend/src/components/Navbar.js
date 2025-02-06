@@ -19,8 +19,11 @@ const Navbar = () => {
         <nav>
           {user && (
             <div>
+              
               <span>{user.email}</span>
               <button onClick={handleClick}>Log out</button>
+              {/* place the AI Scanner here */}
+              <Link to="/ai-scanner">AI Scanner</Link>
             </div>
           )}
           {!user && (

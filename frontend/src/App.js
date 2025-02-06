@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
+import AiScanner from "./components/AiScanner";
 
 function App() {
   const { user } = useAuthContext()
@@ -28,6 +29,11 @@ function App() {
               path="/signup" 
               element={!user ? <Signup /> : <Navigate to="/" />} 
             />
+            <Route 
+              path="/ai-scanner" 
+              element={<AiScanner />} 
+            />
+            
           </Routes>
         </div>
       </BrowserRouter>
