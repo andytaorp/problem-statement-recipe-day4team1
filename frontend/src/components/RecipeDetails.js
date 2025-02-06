@@ -27,7 +27,7 @@ const RecipeDetails = ({ recipe }) => {
   }
 
   return (
-    <div className="workout-details">
+    <div className="recipe-details">
       <h4>{recipe.name}</h4>
       <p><strong>Ingredients: </strong>{recipe.ingredients}</p>
       <p><strong>Instructions: </strong>{recipe.instructions}</p>
