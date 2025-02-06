@@ -17,6 +17,14 @@ export const RecipesReducer = (state, action) => {
       return {
         recipes: state.recipes.filter((w) => w._id !== action.payload._id)
       }
+
+    //Editing a Recipe  - .map function to loop through recipes, update the recipe that matches the id
+    case 'EDIT_RECIPE': //to be done
+      return {
+        recipes: state.recipes.map((recipe) =>
+          recipe._id === action.payload._id ? action.payload : recipe
+        )
+      }
     default:
       return state
   }
