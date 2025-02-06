@@ -85,25 +85,34 @@ const RecipeDetails = ({ recipe }) => {
       {isEditing ? (
         // ✅ Show Edit Form when `isEditing` is true
         <div>
+          <p><strong>Name</strong></p>
           <input
             type="text"
             value={updatedRecipe.name}
             onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, name: e.target.value })}
           />
+
+          <p><strong>Ingredients</strong></p>
           <input
             type="text"
             value={updatedRecipe.ingredients}
             onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, ingredients: e.target.value })}
           />
+
+          <p><strong>Cooking Instructions</strong></p>
           <textarea
             value={updatedRecipe.instructions}
             onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, instructions: e.target.value })}
           />
+
+          <p><strong>Preparation Time (Mins)</strong></p>
           <input
             type="number"
             value={updatedRecipe.prepTime}
             onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, prepTime: e.target.value })}
           />
+
+          <p><strong>Difficulty Level</strong></p>
           <select
             value={updatedRecipe.difficulty}
             onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, difficulty: e.target.value })}
@@ -112,20 +121,26 @@ const RecipeDetails = ({ recipe }) => {
             <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
           </select>
-          <button onClick={handleUpdate}>Save</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
+
+          <div style={{marginTop: 10, display: 'flex', gap: 10}}>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
+            <button onClick={handleUpdate}>Save</button>
+          </div>
         </div>
       ) : (
         // ✅ Show Recipe Details when `isEditing` is false
         <div>
           <h4>{recipe.name}</h4>
           <p><strong>Ingredients: </strong>{recipe.ingredients}</p>
-          <p><strong>Instructions: </strong>{recipe.instructions}</p>
+          <p><strong>Cooking Instructions: </strong>{recipe.instructions}</p>
           <p><strong>Preparation Time: </strong>{recipe.prepTime}</p>
-          <p><strong>Difficulty: </strong>{recipe.difficulty}</p>
+          <p><strong>Difficulty Level: </strong>{recipe.difficulty}</p>
           <p>{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</p>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          <div style={{display: 'flex', gap: 10}}>
+            <button style={{}} onClick={() => setIsEditing(true)}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
+          </div>
+          
         </div>
       )}
     </div>

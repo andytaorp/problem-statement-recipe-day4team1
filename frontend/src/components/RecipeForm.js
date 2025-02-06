@@ -71,7 +71,7 @@ const RecipeForm = () => {
         className={emptyFields.includes('ingredients') ? 'error' : ''}
       />
 
-      <label>Instructions:</label>
+      <label>Cooking Instructions:</label>
       <input 
         type="text"
         onChange={(e) => setInstructions(e.target.value)}
@@ -87,7 +87,7 @@ const RecipeForm = () => {
         className={emptyFields.includes('prepTime') ? 'error' : ''}
       />
 
-      <label>Difficulty:</label>
+      <label>Difficulty Level:</label>
       <select
         value={difficulty}
         onChange={(e) => setDifficulty(e.target.value)}
@@ -99,7 +99,10 @@ const RecipeForm = () => {
         <option value="hard">Hard</option>
       </select>
 
+      <div style={{marginTop: 10}}>
       <button>Add Recipe</button>
+      </div>
+      
       {error && <div className="error">{error}</div>}
     </form>
   )
