@@ -57,9 +57,6 @@ header a {
   color: #555;
 }
 .workout-details span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
@@ -127,4 +124,22 @@ form.signup, form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+.recipe-buttons {
+  display: flex;         /* Aligns children horizontally */
+  gap: 10px;             /* Adds some space between buttons */
+  justify-content: flex-start; /* Aligns the buttons to the left (optional) */
+}
+
+.recipe-buttons span {
+  cursor: pointer;      /* Adds a pointer on hover */
+  padding: 5px;          /* Adds some padding to the buttons */
+  border: 1px solid #ccc;  /* Adds a border for visibility */
+  border-radius: 5px;    /* Rounds the corners */
+  background-color: #f4f4f4; /* Light background color */
+}
+
+.recipe-buttons span:hover {
+  background-color: #e0e0e0; /* Darken background on hover */
 }
