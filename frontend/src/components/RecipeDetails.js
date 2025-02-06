@@ -22,7 +22,7 @@ const RecipeDetails = ({ recipe }) => {
     const json = await response.json()
 
     if (response.ok) {
-      dispatch({type: 'DELETE_WORKOUT', payload: json}) //need to work on it
+      dispatch({type: 'DELETE_RECIPE', payload: json})
     }
   }
 
